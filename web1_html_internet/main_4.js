@@ -8,7 +8,7 @@ var app = http.createServer(function(request,response){
     var pathname = url.parse(_url, true).pathname;
     
 
-    // console.log(queryData.id)
+    console.log(queryData.id)
     if(pathname === '/'){
       if(queryData.id === undefined){
 
