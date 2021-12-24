@@ -100,14 +100,15 @@ var app = http.createServer(function(request,response){
           console.log(post.title);
           fs.writeFile(`../data/${title}`, description, 'utf8', function(err){
             // callback function
+            // response.writeHead(302, {Location:`/?id=${title}`});  // page를 redirection 했을 때 사용하는 코드 번호
             response.writeHead(302, {Location:`/?id=${title}`});  // page를 redirection 했을 때 사용하는 코드 번호
             // response.end("success");
             response.end();
             // redirection
           });
         });
-        response.writeHead(200);
-        response.end("success");
+        // response.writeHead(200);
+        // response.end("success");
     } else {
       response.writeHead(404);
       response.end();
